@@ -39,7 +39,7 @@ def main():
 				print('Not a valid choice. Exiting..')
 
 			print('Your last choice was: ' + choice)
-		except KeyboardInterrupt:
+		except EOFError:
 			running = False
 
 #1
