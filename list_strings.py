@@ -2,8 +2,9 @@
 
 def main():
 	#test values
-	elements = [1,2,3,4,5,3,5,7,8,2]
-	element = 12
+	list1 = [1,2,3,4,5,3,5,7,8,2]
+	list2 = [1,2,3,4,5,3,5,7,8,2]
+	integer = 12
 	string = 'ala'
 	running = True
 	while running:
@@ -11,23 +12,23 @@ def main():
 			choice = input('Please choose a exercise to execute or type "exit"'
 					' to leave > ')
 			if choice == '1':
-				one(elemenst)
+				one(list1)
 			elif choice == '2':
-				two(elements)
+				two(list1)
 			elif choice == '3':
-				three(elements, element)
+				three(list1, integer)
 			elif choice == '4':
-				four(elements)
+				four(list1)
 			elif choice == '5':
-				five(elements)
+				five(list1)
 			elif choice == '6':
 				six(string)
 			elif choice == '7':
-				seven(elements)
+				seven(list1)
 			elif choice == '8':
-				eight()
+				on_all(multi, list1)
 			elif choice == '9':
-				nine()
+				nine(list1, list2)
 			elif choice == '10':
 				ten()
 			elif choice == '11':
@@ -57,6 +58,9 @@ def main():
 		except EOFError:
 			running = False
 
+# for 8
+def multi(n):
+	return n*n
 #1
 def one(elements):
 	print('Print the biggest value in a given list.')
@@ -123,14 +127,26 @@ def seven(elements):
 			counter += 1
 		print(total)
 	def recursion(elements):
-		if len(elements) == 0:
-			print('Sum: 0')
-		else:
-			return elements[0] + recursion(elements[1:])
+		if len(elements) == 1:
+			return elements[0]
+		return elements[0] + recursion(elements[1:])
 
 	foorloop(elements)
 	whileloop(elements)
 	print(recursion(elements))
+	print(' ')
+
+#8
+def on_all(function, elements):
+	print('Apply a function to every element of a list.')
+	result =  map(function, elements)
+	print(set(result))
+	print(' ')
+
+#9
+def nine(list1, list2):
+	print('Concatenate two lists.')
+	print(list1 + list2)
 	print(' ')
 
 
