@@ -4,7 +4,7 @@ def main():
 	#test values
 	list1 = [1,2,3,4,5,3,5,7,8,2]
 	list2 = [1,2,3,4,5,3,5,7,8,2]
-	integer = 12
+	integer = 2
 	string = 'ala'
 	running = True
 	while running:
@@ -30,11 +30,11 @@ def main():
 			elif choice == '9':
 				nine(list1, list2)
 			elif choice == '10':
-				ten()
+				ten(list1, list2)
 			elif choice == '11':
-				eleven()
+				eleven(list1, list2)
 			elif choice == '12':
-				twelve()
+				twelve(list1, integer)
 			elif choice == '13':
 				thirteen()
 			elif choice == '14':
@@ -149,6 +149,51 @@ def nine(list1, list2):
 	print(list1 + list2)
 	print(' ')
 
+#10
+def ten(list1, list2):
+	print('Concatenate two lists alternatingly.')
+	counter = 0
+	list3 = []
+	for elm in list1:
+		list3.append(elm)
+		list3.append(list2[counter])
+		counter += 1
+	print(list3)
+	print(' ')
+		
+#11
+def eleven(list1, list2):
+	print('Concatenate two lists and sort the result.')
+	result = list1 + list2
+	result.sort()
+	print(result)
+	print(' ')
+
+#12
+def twelve(list1, integer):
+	print('Rote a list by n.')
+	print(list1[integer:] + list1[:integer])
+	print(' ')
+
+#13
+def thirteen():
+	print('Compute the first 100 fibonacci numbers.')
+	result = [0,1]
+	for i in range(2,100):
+		result.append(result[i-1]+result[i-2])
+	print(result)
+	print(' ')
+
+#14
+def fourteen():
+	print('Print list of read number digits.')
+	number = input('Please insert a number > ')
+	print(list(number))
+	print(' ')
+
+#15
+def fivteen():
+	pass
 
 
 if __name__ == "__main__":
